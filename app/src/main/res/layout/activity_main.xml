@@ -1,0 +1,192 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+        <TableRow android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="IP Address: "
+            android:gravity="center_vertical" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/tbxIP"
+            android:inputType="phone"
+            android:typeface="monospace"
+            android:text="192.168.100.2"
+            android:singleLine="true"
+            android:gravity="center_vertical|right"
+            android:enabled="true"
+            android:editable="true"
+            android:layout_weight="10"
+            android:ems="10"
+            android:minHeight="52dp"
+            android:selectAllOnFocus="true"/>
+        </TableRow>
+    <TableRow android:measureWithLargestChild="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Listening Port:  "
+            android:layout_weight="0"
+            android:gravity="center_vertical" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:ems="10"
+            android:id="@+id/tbxPort"
+            android:inputType="phone"
+            android:typeface="monospace"
+            android:text="10010"
+            android:singleLine="true"
+            android:gravity="center_vertical|right"
+            android:enabled="true"
+            android:editable="true"
+            android:layout_weight="10"
+            android:minHeight="52dp"
+            android:selectAllOnFocus="true"/>
+    </TableRow>
+    </TableLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Connect to Server"
+        android:id="@+id/button_Connect"
+        android:onClick="onButtonClick"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:minHeight="64dp" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="20dp" />
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="120dp">
+
+            <Button
+                android:tag="prev"
+                android:onClick="sendMessage"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="prev"
+                android:id="@+id/button_Prev"
+                android:layout_weight="5" />
+
+            <Button
+                android:tag="playpause"
+                android:onClick="sendMessage"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="play/pause"
+                android:id="@+id/button_PlayPause"
+                android:layout_weight="5" />
+
+            <Button
+                android:tag="next"
+                android:onClick="sendMessage"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="next"
+                android:id="@+id/button_Next"
+                android:layout_weight="5" />
+        </TableRow>
+        <TableRow
+            android:layout_width="fill_parent">
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="stop"
+                android:id="@+id/button_Stop"
+                android:tag="stop"
+                android:onClick="sendMessage"
+                android:layout_weight="50" />
+            <LinearLayout>
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="vol++"
+                    android:id="@+id/button_VolUp"
+                    android:tag="vol_up"
+                    android:onClick="sendMessage"
+                    android:layout_weight="1" />
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="vol--"
+                    android:id="@+id/button_VolDown"
+                    android:tag="vol_down"
+                    android:onClick="sendMessage"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+        </TableRow>
+
+
+        <Space
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="12dp" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="60dp">
+
+
+            <Button
+                android:tag="toggle_repeat"
+                android:onClick="sendMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:text="toggle repeat"
+                android:id="@+id/toggleButton"
+                android:layout_column="0"
+                android:layout_weight="10"
+                android:width="20dp" />
+
+            <Button
+                android:tag="toggle_shuffle"
+                android:onClick="sendMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:text="toggle shuffle"
+                android:id="@+id/toggleButton2"
+                android:layout_column="1"
+                android:layout_weight="10"
+                android:width="20dp" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="12dp" />
+
+    </TableLayout>
+
+</LinearLayout>
